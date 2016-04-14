@@ -1,0 +1,863 @@
+
+
+/* base */
+html,body {
+    color: #222;
+    font-size: 100%;
+}
+/* 给内容一个高度 */
+html,
+body {
+    height: 100%;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+/* =========================================== */
+body a{
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+#loading{
+	z-index: 999;
+	text-align: center;
+	position:fixed;
+	top: 36%;
+	left:35%	
+}
+
+.wrapper{
+	display: none;
+}
+
+
+
+
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+/*   -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; */
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+
+#section0{
+	position:relative;
+
+    background-image: -webkit-radial-gradient(#efc4dd,#edbaee); 
+    background-image: radial-gradient(#efc4dd,#edbaee);	
+}  
+.frame{
+	position:relative;
+	width:100%;
+	height:inherit;
+} 
+.ele{
+	opacity:0;
+	position:absolute;
+	
+}
+/* .active.ele{
+	opacity:1;
+}  */
+.ele-player{
+	background-image:url(../img/player.png);
+	width:50px;
+	height:66px;
+	left:86.56%;
+	top:50px; 
+	
+}
+.ele-note{
+	background-image:url(../img/note.png);
+	width:55px;
+	height:56px;
+	left:78.75%;
+	top:26px; 
+	
+}
+
+#section0 .ele-title1{
+	background-image:url(../img/title1.png);
+	width:177px;
+	height:69px;
+	left:36.25%;
+	top:11.41%; 
+}
+#section0 .ele-girl1{
+	background-image:url(../img/girl1.png);
+	width:309px;
+	height:511px;
+	left:24.06%;
+	top:24.60%; 
+	z-index:20;
+}
+#section0 .ele-bush{
+	background-image:url(../img/bush.png);
+	width:497px;
+	height:194px;
+	left:11.25%;
+	top:62.00%; 
+	z-index:30;
+}
+#section0 .ele-text1{
+	background-image:url(../img/text1.png);
+	width:446px;
+	height:36px;
+	left:15%;
+	top:85.22%; 
+}
+#section0 .ele-butterfly1{
+	background-image:url(../img/butterfly1.png);
+	width:32px;
+	height:43px;
+	left:21.56%;
+	top:45.63%; 
+}
+#section0 .ele-butterfly2{
+	background-image:url(../img/butterfly2.png);
+	width:31px;
+	height:39px;
+	left:77.81%;
+	top:42.86%; 
+}
+#section0.ele-flower{
+	background-image:url(../img/flower.png);
+	width:137px;
+	height:124px;
+	left:24.53%;
+	top:58.33%; 
+	z-index:10;
+}
+
+
+svg{
+	position:absolute;
+	top:0;
+	left:0;
+	/* transform:scaleX(1) scaleY(1) translate(0,0); */
+	/* svg iphone 6 plus 适配 */
+	/* transform:scaleX(1.35) scaleY(1.56) translate(35px,83px); */
+
+ }
+path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  fill:none;
+  stroke:#fff;
+}
+svg.active path.pathO{
+	stroke-width:5px;
+	-webkit-animation: dash 3s linear forwards;
+    animation: dash 3s linear forwards;
+	
+}
+svg.active path.pathI{
+	stroke-width:1.5px;
+	-webkit-animation: dash 3.5s linear forwards;
+	animation: dash 3.5s linear forwards;
+}
+/* .active.pathI{
+	-webkit-animation: dash 3s linear forwards;
+    animation: dash 3s linear forwards;
+}
+.active.pathO{
+	-webkit-animation: dash 3.5s linear forwards;
+	animation: dash 3.5s linear forwards;
+} */
+@-webkit-keyframes dash {
+  to {
+	opacity:1;  
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  to {
+	opacity:1;
+    stroke-dashoffset: 0;
+  }
+}  
+/* section0 animate */
+
+#section0 .active.ele-player{	
+	animation:fadeIn 2s ease forwards;
+	animation-delay:.1s;
+	
+	-webkit-animation:fadeIn 2s ease forwards;
+	-webkit-animation-delay:.1s;	
+}
+#section0 .active.ele-note{
+	animation:fadeIn 2s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeIn 2s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+#section0 .active.ele-title1{
+	animation:fadeInDown 2s ease forwards;
+	animation-delay:.1s;
+	
+	-webkit-animation:fadeIn 2s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+
+#section0 .active.ele-girl1{
+	animation:fadeIn 3s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeIn 3s ease forwards;
+	-webkit-animation-delay:.1s;	
+}
+#section0 .active.ele-bush{
+	
+	
+	
+/* 	animation-name: fadeInUp, bushBg;
+    animation-duration: 3s, 1s;
+    animation-delay: 0s, 3s;
+    animation-timing-function: ease, linear;
+    animation-iteration-count: 1,infinite;
+    animation-fill-mode: forwards;
+	
+	
+	-webkit-animation-name: fadeInUp, bushBg;
+    -webkit-animation-duration: 3s, 1s;
+    -webkit-animation-delay: 0s, 3s;
+    -webkit-animation-timing-function: ease, linear;
+    -webkit-animation-iteration-count: 1,infinite;
+    -webkit-animation-fill-mode: forwards; */
+	
+	
+	animation: fadeInUp 3s forwards, bushBg 1s 3s infinite;
+	-webkit-animation: fadeInUp 3s forwards, bushBg 1s 3s infinite;
+	
+
+	
+	
+/* 	-webkit-animation:fadeInUp 3s ease forwards, bushBg 1s ease infinite;
+	-webkit-animation-delay:.1s; */
+}
+#section0 .active.ele-text1{
+	animation:fadeIn 4s ease forwards;
+	animation-delay:.1s;
+	
+	-webkit-animation:fadeIn 3s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+#section0 .active.ele-butterfly1{
+	animation:fadeIn 2s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeIn 3s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+#section0 .active.ele-butterfly2{
+	animation:fadeIn 2s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeIn 3s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+#section0 .active.ele-flower{
+	animation:fadeInRight 1s ease forwards;	
+	animation-delay:2s;
+	
+	-webkit-animation:fadeIn 3s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+
+/* section1 */
+#section1{
+	position:relative;
+    background-image: -webkit-radial-gradient(#c2f6f9,#95d2dd); 
+    background-image: radial-gradient(#c2f6f9,#95d2dd);	
+}  
+
+#section1 .ele-title2{
+	background-image:url(../img/title2.png);
+	width:57px;
+	height:183px;
+	left:17.5%;
+	top:11.21%; 	
+}
+#section1 .ele-girl2{
+	background-image:url(../img/girl2.png);
+	width:316px;
+	height:517px;
+	left:26.88%;
+	top:24.31%; 	
+}
+#section1 .ele-text2{
+	background-image:url(../img/text2.png);
+	width:413px;
+	height:83px;
+	left:17.97%;
+	top:81.65%; 	
+}
+#section1 .ele-dandelion1{
+	background-image:url(../img/dandelion1.png);
+	width:87px;
+	height:73px;
+	left:9%;
+	top:10.91%; 	
+} 
+ 
+ #section1 .ele-dandelion2{
+	background-image:url(../img/dandelion2.png);
+	width:47px;
+	height:75px;
+	left:20%;
+	bottom:20.22%; 	
+}
+#section1 .ele-dandelion3{
+	background-image:url(../img/dandelion3.png);
+	width:36px;
+	height:36px;
+	right:13.59%;
+	bottom:29.15%; 	
+}
+/* section1 animate */
+#section1 .active.ele-player{
+	animation:fadeIn 2s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeIn 2s ease forwards;
+	-webkit-animation-delay:.1s;	
+}
+#section1 .active.ele-note{
+	animation:fadeIn 2s ease forwards;
+	animation-delay:.1s;
+	
+	-webkit-animation:fadeIn 2s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+#section1 .active.ele-title2{
+	animation:fadeInLeft 2s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeInLeft 2s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+#section1 .active.ele-girl2{
+	animation:fadeIn 1s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeIn 1s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+#section1 .active.ele-text2{
+	animation:fadeInUp 2s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeInUp 2s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+#section1 .active.ele-dandelion1{
+	/* animation:fadeOutDownBig 2s ease infinite forwards,wobble 2s ease infinite; */
+	animation:wobbleDown 3.5s ease infinite;
+	animation-delay:.4s;
+
+	-webkit-animation:wobbleDown 3.5s ease infinite;
+	-webkit-animation-delay:.4s;
+}
+#section1 .active.ele-dandelion2{
+	animation:wobbleDown 2.5s ease infinite forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:wobbleDown 2.5s ease infinite forwards;
+	-webkit-animation-delay:.1s;
+}
+#section1 .active.ele-dandelion3{
+	animation:wobbleDown 3s ease infinite forwards;
+	animation-delay:.7s;
+
+	-webkit-animation:wobbleDown 3s ease infinite forwards;
+	-webkit-animation-delay:.7s;
+}
+
+ 
+/* section2*/ 
+#section2{
+	position:relative;
+    background-image: -webkit-radial-gradient(#e1d5b9,#e6db91); 
+    background-image: radial-gradient(#e1d5b9,#e6db91);	
+}   
+#section2 .ele-title3{
+	background-image:url(../img/title3.png);
+	width:57px;
+	height:183px;
+	left:17.97%;
+	top:11.31%; 	
+} 
+#section2 .ele-girl3{
+	background-image:url(../img/girl3.png);
+	width:204px;
+	height:509px;
+	left:34.69%;
+	top:142px; 	
+	z-index:20;
+} 
+#section2 .ele-grass{
+	background-image:url(../img/grass.png);
+	width:434px;
+	height:250px;
+	left:19%;
+	top:275px;
+	z-index:10;
+} 
+#section2 .ele-text3{
+	background-image:url(../img/text3.png);
+	width:449px;
+	height:84px;
+	left:14.84%;
+	top:85%; 	
+} 
+
+/* section2 animate */
+
+#section2 .active.ele-player{
+	animation:fadeInLeft 2s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeInLeft 2s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+#section2 .active.ele-note{
+	animation:fadeIn 2s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeIn 2s ease forwards;
+	-webkit-animation-delay:.1s;	
+}
+ #section2 .active.ele-title3{
+	animation:fadeIn 2.5s ease forwards;
+	animation-delay:0.1s;
+
+	-webkit-animation:fadeIn 2.5s ease forwards;
+	-webkit-animation-delay:0.1s;	
+}
+ 
+#section2 .active.ele-girl3{
+	animation:fadeIn 1s ease forwards;
+	animation-delay:.1s;
+
+	-webkit-animation:fadeIn 1s ease forwards;
+	-webkit-animation-delay:.1s;	
+}
+ 
+#section2 .active.ele-text3{
+	animation:fadeInUp 2.5s ease forwards;
+	animation-delay:.1s;
+	
+	-webkit-animation:fadeInUp 2.5s ease forwards;
+	-webkit-animation-delay:.1s;
+}
+ 
+#section2 .active.ele-grass{
+	animation:fadeInDown 2s ease forwards, grassBg 3.5s ease infinite;
+	animation-delay:0.5s;
+
+	-webkit-animation:fadeInDown 2s ease forwards, grassBg 3.5s ease infinite;
+	-webkit-animation-delay:0.5s;
+}
+  
+ 
+ 
+ 
+ 
+ 
+ /* 动画定义 */
+ 
+ /* self animate */
+
+
+
+@keyframes bushBg {
+  from {
+    background-image:url(../img/bush.png);
+  }
+
+  to {
+   background-image:url(../img/bushflip.png);
+  }
+}
+
+@-webkit-keyframes bushBg {
+  from {
+    background-image:url(../img/bush.png);
+  }
+
+  to {
+   background-image:url(../img/bushflip.png);
+							
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes grassBg {
+  0% {
+   background-image:url(../img/grass.png);
+  }
+  33%{
+   background-image:url(../img/grassleft.png);
+  }
+  
+  66%{
+   background-image:url(../img/grass.png);
+  }
+  100%{
+   background-image:url(../img/grassright.png);
+  }
+  
+} 
+ 
+ @-webkit-keyframes grassBg {
+  0% {
+    background-image:url(../img/grass.png);
+  }
+  33%{
+   background-image:url(../img/grassleft.png);
+  }
+  
+  66%{
+   background-image:url(../img/grass.png);
+  }
+  100%{
+   background-image:url(../img/grassright.png);
+  }
+  
+} 
+ 
+ 
+ /* animate.css */
+ 
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 25%, 0);
+    transform: translate3d(0, 25%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 25%, 0);
+    transform: translate3d(0, 25%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+   
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+   
+
+
+@keyframes wobbleDown {
+  from {
+    -webkit-transform: none;
+    transform: none;
+	opacity: 1
+  }
+
+  15% {
+    -webkit-transform: translate3d(-25%, 45%, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 45%, 0) rotate3d(0, 0, 1, -5deg);
+	opacity: 0.85;
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 90%, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 90%, 0) rotate3d(0, 0, 1, 3deg);
+	opacity: 0.7;
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 135%, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 135%, 0) rotate3d(0, 0, 1, -3deg);
+	opacity: 0.55;
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 180%, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 180%, 0) rotate3d(0, 0, 1, 2deg);
+	opacity: 0.4;
+  }
+
+  75% {
+    -webkit-transform: translate3d(-5%, 225%, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 225%, 0) rotate3d(0, 0, 1, -1deg);
+	opacity: 0;
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+	opacity: 0;
+  }
+}
+
+@-webkit-keyframes wobbleDown {
+  from {
+    -webkit-transform: none;
+    transform: none;
+	opacity: 1
+  }
+
+  15% {
+    -webkit-transform: translate3d(-25%, 45%, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 45%, 0) rotate3d(0, 0, 1, -5deg);
+	opacity: 0.85;
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 90%, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 90%, 0) rotate3d(0, 0, 1, 3deg);
+	opacity: 0.7;
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 135%, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 135%, 0) rotate3d(0, 0, 1, -3deg);
+	opacity: 0.55;
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 180%, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 180%, 0) rotate3d(0, 0, 1, 2deg);
+	opacity: 0.4;
+  }
+
+  75% {
+    -webkit-transform: translate3d(-5%, 225%, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 225%, 0) rotate3d(0, 0, 1, -1deg);
+	opacity: 0;
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+	opacity: 0;
+  }
+}
+@-webkit-keyframes fadeOutDownBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+}
+
+@keyframes fadeOutDownBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+}
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}  
+   
+

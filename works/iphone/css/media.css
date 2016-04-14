@@ -1,0 +1,104 @@
+@media (min-width:320px) and (max-width:414px){
+	/* section0 */
+	.ele-player{
+		background-size:50%;
+		background-repeat:no-repeat;
+	}
+	.ele-note{
+		background-size:50%;
+		background-repeat:no-repeat;	
+	
+
+		
+	}
+	#section0 .ele-title1{
+		background-size:50%;
+		background-repeat:no-repeat;
+	}
+	#section0 .ele-girl1{
+		background-size:50%;
+		background-repeat:no-repeat;
+	}
+	#section0 .ele-bush{
+		background-size:50%;
+		background-repeat:no-repeat;
+	}
+	#section0 .ele-text1{
+		background-size:50%;
+		background-repeat:no-repeat; 
+	}
+	#section0 .ele-butterfly1{
+		background-size:50%;
+		background-repeat:no-repeat;
+	}
+	#section0 .ele-butterfly2{
+		background-size:50%;
+		background-repeat:no-repeat;
+	}
+	#section0.ele-flower{
+		background-size:50%;
+		background-repeat:no-repeat;
+	}
+		
+	
+	/* section1 */
+	#section1 .ele-title2{
+		background-size:50%;
+		background-repeat:no-repeat;	
+	}
+	#section1 .ele-girl2{
+		background-size:50%;
+		background-repeat:no-repeat;	
+	}
+	#section1 .ele-text2{
+		background-size:50%;
+		background-repeat:no-repeat;	
+	}
+	#section1 .ele-dandelion1{
+		background-size:50%;
+		background-repeat:no-repeat;	
+	} 
+	 
+	 #section1 .ele-dandelion2{
+		background-size:50%;
+		background-repeat:no-repeat;	
+	}
+	#section1 .ele-dandelion3{
+		background-size:50%;
+		background-repeat:no-repeat; 	
+	}
+		
+	
+	
+	/* section2 */
+	#section2 .ele-title3{
+		background-size:50%;
+		background-repeat:no-repeat;
+	} 
+	#section2 .ele-girl3{
+		background-size:50%;
+		background-repeat:no-repeat;
+	} 
+	#section2 .ele-grass{
+		background-size:50%;
+		background-repeat:no-repeat;		
+	} 
+	#section2 .ele-text3{
+		background-size:50%;
+		background-repeat:no-repeat;
+	} 
+
+	
+}
+@media (min-width:375px){
+	#section0 .ele-bush{
+		top:59%; 
+	}
+	
+}
+@media (min-width:414px){
+	#section0 .ele-bush{
+		top:55%; 
+	}
+	
+}
