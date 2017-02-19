@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">      	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="favicon.ico">	
+	<title>home</title>
+	<link href="css/vendor/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href="css/vendor/main.css" type="text/css" media="all"> 
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all"> 
+	<!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+	<![endif]-->	
+</head>
+<body>
+	<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	
+	<!-- Add your site or application content here -->
+
+	<div id="blocker">
+
+		<div id="instructions">
+			<div class="gamemenu">
+				<canvas id="wave"></canvas>
+				<h2>点击开始游戏</h2>
+				<h4>说明:</h4>
+				<ul>
+					<li>移动:&emsp;W,A,S,D</li>
+					<li>跳跃:&emsp;空格</li>
+					<li>射击:&emsp;左键</li>
+					<li>互动:&emsp;E</li>
+					<li>手电筒:&emsp;F</li>
+					<li>暂停游戏:&emsp;ESC</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+
+	<video id="video" loop  muted webkit-playsinline style="display:none">
+		<source src="models/sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+		<source src="models/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
+	</video>
+	
+
+	
+
+
+	<script src="js/vendor/jquery-1.11.2.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+
+	<!--three.js libs-->
+	<!--<script src="js/libs/three.js"></script>-->
+    <script src="js/libs/three.min.js"></script>
+	<script src="js/libs/PointerLockControls.js"></script>
+	<script src="js/libs/TrackballControls.js"></script>
+	<script src="js/libs/stats.min.js"></script>
+	<script src="js/libs/dat.gui.min.js"></script>
+
+	<script src="js/libs/DDSLoader.js"></script>
+	<script src="js/libs/MTLLoader.js"></script>
+	<script src="js/libs/OBJLoader.js"></script>
+	<script src="js/libs/tween.min.js"></script>
+
+
+
+
+<!--zzz-->
+	<script src="js/GOT.js"></script>
+	<script src="js/libs/require.js" data-main="js/home"></script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
