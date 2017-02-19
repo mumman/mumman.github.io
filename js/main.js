@@ -19,6 +19,7 @@
 			$("#loading").fadeOut();
 			$("#wrap").fadeIn(function(){
 				var music = document.getElementById("music");
+				music.volume=0.5;
 				music.play();
 			});
 		},300)
