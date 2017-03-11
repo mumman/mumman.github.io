@@ -5,9 +5,7 @@
 "DbgIndex" : 0,
 "DbgName"  : "roof",
 "colorDiffuse"  : [0.5880, 0.5880, 0.5880],
-"colorAmbient"  : [0.5880, 0.5880, 0.5880],
 "colorSpecular"  : [0.9000, 0.9000, 0.9000],
-"transparency"  : 1.0,
 "specularCoef"  : 10.0,
 "mapDiffuse"    : "flr-tiles-diffuse.jpg",
 "vertexColors" : false

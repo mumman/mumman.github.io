@@ -48,7 +48,7 @@ define(['BulletBall'],function(BulletBall){
         this.isFire=false;
         this.bulletArray=[];
         this.speed=100;
-        this.range=2000;
+        this.range=1000;
     }
     GunWeapon.prototype={
         constructor: GunWeapon,

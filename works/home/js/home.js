@@ -56,6 +56,27 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
 
     var prevTime = performance.now();
 
+    //全局的资源管理器
+       var warp=document.getElementById('warp');
+        var loading=document.getElementById('loading');
+    THREE.DefaultLoadingManager.onStart = function ( ) {
+        //console.log( 'Loaded 开始' );
+    };
+    THREE.DefaultLoadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
+        //console.log( 'Loaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
+        document.getElementById('number_message').innerHTML=itemsLoaded;
+        document.getElementById('total_message').innerHTML=itemsTotal;
+        document.getElementById('bar').style.width= itemsLoaded/itemsTotal*100+"%";
+    };
+    THREE.DefaultLoadingManager.onLoad = function ( ) {
+        console.log( 'Loading Complete!');
+        warp.style.visibility='visible';
+        loading.style.display='none';
+
+    };
+    THREE.DefaultLoadingManager.onError = function ( url ) {
+        console.log( 'There was an error loading ' + url );
+    };
 
 
 
@@ -120,7 +141,12 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
 
         //拖放测试物体
         for(var i=0;i<40;i++){
-            var moveMesh=new THREE.Mesh(new THREE.BoxGeometry(20,20,20), new THREE.MeshBasicMaterial({color: 0x051A07}));
+            var moveMesh=new THREE.Mesh(new THREE.BoxGeometry(20,20,20), new THREE.MeshBasicMaterial({
+                color: 0x051A07,
+                //transparent:true,
+                //opacity:0.7,
+               // depthTest:false
+            }));
             moveMesh.position.x=Math.floor(Math.random()*2000-1000);
             moveMesh.position.z=Math.floor(Math.random()*2000-1000);
             scene.add(moveMesh);
@@ -141,7 +167,6 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
         //门牌 微博 功能
         document.addEventListener('keydown',function(event){
             doorPlate.doorPlateEvent(event);
-
         },false);
 
         //木门
@@ -149,7 +174,6 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
         woodenDoor.asyncObj(scene);
         document.addEventListener('keydown',function(event){
             woodenDoor.woodenDoorEvent(event);
-
         },false);
 
         //音乐播放器
@@ -158,7 +182,6 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
         musicPlayer.asyncObj(scene,musicPlayer.changeObject);
         document.addEventListener('keydown',function(event){
             musicPlayer.musicPlayerEvent(event);
-
         });
 
         //灯光系统
@@ -170,7 +193,6 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
         lightSystem.asyncObj(scene);
         document.addEventListener('keydown',function(event){
             lightSystem.lightSystemEvent(event);
-
         },false);
 
         scene.add( lightSystem.lights.light1);
@@ -230,8 +252,12 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize( window.innerWidth, window.innerHeight );
         container = document.createElement( 'div' );
+
         container.appendChild( renderer.domElement );
-        document.body.appendChild( container );
+        warp.appendChild(container);
+        //document.body.appendChild( container );
+
+
 
         //stats
         stats = new Stats();
@@ -254,6 +280,7 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
     function render() {
         var time = performance.now();
         var delta = ( time - prevTime ) / 1000;
+        //console.log(delta);
         renderer.render( scene, personalControl.camera );
 
 
@@ -278,7 +305,7 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
         moveFunction.dragIng(personalControl.pickRaycaster,personalControl.controls.getObject().position,personalControl.camera.getWorldDirection());
         moveFunction.dropIng(delta);
         //门牌标志动画
-        doorPlate.doorPlateAnimation(delta);
+        doorPlate.doorPlateAnimation();
         //门牌选中
         doorPlate.doorPlatePick(personalControl.pickRaycaster,doorPlate.changeObject);
         //木门选中

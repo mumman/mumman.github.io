@@ -2,14 +2,22 @@
  * Created by Administrator on 2017/2/17.
  */
 //three.js部分的全局对象
-
-
-
-
-
 var GOT={
     gameStart:false,
-    objPromise: function(mtlPath,objPath){
+    manager : function(){
+        var manager = new THREE.LoadingManager();
+        manager.onLoad = function ( ) {
+         console.log( 'Loading complete!zzzzzzzzzzzzzzz');
+         };
+      /*  manager.onProgress = function ( item, loaded, total ) {
+            console.log( item, loaded, total );
+        };*/
+        return manager;
+
+    }(),
+
+
+    objPromise: function(mtlPath,objPath,manager){
      var promise= new Promise(function(resolve,reject){
                   function onProgress(xhr){
                       if ( xhr.lengthComputable ) {
@@ -20,10 +28,10 @@ var GOT={
                   function onError(xhr){}
                   THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
 
-                  var mtlLoader = new THREE.MTLLoader();
+                  var mtlLoader = new THREE.MTLLoader(manager);
                   mtlLoader.load( mtlPath, function( materials ) {
                       materials.preload();
-                      var objLoader = new THREE.OBJLoader();
+                      var objLoader = new THREE.OBJLoader(manager);
                       objLoader.setMaterials( materials );
                       objLoader.load( objPath, function ( object ) {
                           resolve(object);
@@ -34,9 +42,9 @@ var GOT={
         return promise;
     },
 
-    jsonPromise:function(jsonPath){
+    jsonPromise:function(jsonPath,manager){
         var promise=new Promise(function(resolve,reject){
-            var loader = new THREE.JSONLoader();
+            var loader = new THREE.JSONLoader(manager);
             loader.load(
                 // resource URL
                 jsonPath,
@@ -58,9 +66,9 @@ var GOT={
         return promise;
     },
 
-    jsonAnimationPromise:function(jsonPath){
+    jsonAnimationPromise:function(jsonPath,manager){
         var promise= new Promise(function(resolve,reject){
-            var loader = new THREE.JSONLoader();
+            var loader = new THREE.JSONLoader(manager);
             loader.load( jsonPath, function( geometry,materials ) {
                 var animationObject={
                     mesh: null,
@@ -82,11 +90,8 @@ var GOT={
     },
 
 
-
-
     //立即运行一次返回构造函数
     TipsInfo: function(){
-
         function TipsInfo(info){
             function canvasDraw(){
                 var canvas=document.createElement('canvas');
@@ -120,18 +125,6 @@ var GOT={
         };
         return  TipsInfo;
     }()
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 };

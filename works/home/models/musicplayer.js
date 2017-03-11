@@ -18,9 +18,7 @@
 "DbgIndex" : 0,
 "DbgName"  : "Material #688",
 "colorDiffuse"  : [0.0000, 0.0000, 0.0000],
-"colorAmbient"  : [0.0000, 0.0000, 0.0000],
 "colorSpecular"  : [0.9000, 0.9000, 0.9000],
-"transparency"  : 1.0,
 "specularCoef"  : 10.0,
 "vertexColors" : false
 },
@@ -29,9 +27,7 @@
 "DbgIndex" : 1,
 "DbgName"  : "Material #690",
 "colorDiffuse"  : [0.0510, 0.0510, 0.0510],
-"colorAmbient"  : [0.0510, 0.0510, 0.0510],
 "colorSpecular"  : [0.9000, 0.9000, 0.9000],
-"transparency"  : 1.0,
 "specularCoef"  : 10.0,
 "vertexColors" : false
 },
@@ -40,9 +36,7 @@
 "DbgIndex" : 2,
 "DbgName"  : "zhangp",
 "colorDiffuse"  : [1.0000, 1.0000, 1.0000],
-"colorAmbient"  : [1.0000, 1.0000, 1.0000],
 "colorSpecular"  : [0.9000, 0.9000, 0.9000],
-"transparency"  : 1.0,
 "specularCoef"  : 10.0,
 "vertexColors" : false
 },
@@ -51,9 +45,7 @@
 "DbgIndex" : 3,
 "DbgName"  : "Material #689",
 "colorDiffuse"  : [0.0706, 0.9961, 0.0000],
-"colorAmbient"  : [0.0706, 0.9961, 0.0000],
 "colorSpecular"  : [0.9000, 0.9000, 0.9000],
-"transparency"  : 1.0,
 "specularCoef"  : 10.0,
 "vertexColors" : false
 }

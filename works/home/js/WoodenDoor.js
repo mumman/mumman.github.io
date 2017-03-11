@@ -14,6 +14,7 @@ define(function(){
             tipsInfo: new GOT.TipsInfo("按E开关")
         };
 
+
     }
     WoodenDoor.prototype={
         constructor: WoodenDoor,

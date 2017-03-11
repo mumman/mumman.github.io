@@ -17,6 +17,7 @@ define (function(){
             color: 0xffffff,
             map:texture
 
+
         });
         var mesh=new THREE.Mesh(geometry,material);
 

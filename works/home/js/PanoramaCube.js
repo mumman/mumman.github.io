@@ -18,8 +18,6 @@ define(function(){
         var equirectangular = new THREE.Mesh( sphereGeometry, sphereMaterial );
 
 
-/*
-
 
 
         //cubemap 方式全局
@@ -58,12 +56,7 @@ define(function(){
             image.src = path;
             return material;
         }
-		
-		
         this.cubeMesh=skyBox;
-*/		
-		
-		
         this.sphereMesh=equirectangular;
 
 

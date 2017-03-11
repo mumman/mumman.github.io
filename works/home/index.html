@@ -23,26 +23,41 @@
 	<![endif]-->
 	
 	<!-- Add your site or application content here -->
-
-	<div id="blocker">
-
-		<div id="instructions">
-			<div class="gamemenu">
-				<canvas id="wave"></canvas>
-				<h2>点击开始游戏</h2>
-				<h4>说明:</h4>
-				<ul>
-					<li>移动:&emsp;W,A,S,D</li>
-					<li>跳跃:&emsp;空格</li>
-					<li>射击:&emsp;左键</li>
-					<li>互动:&emsp;E</li>
-					<li>手电筒:&emsp;F</li>
-					<li>暂停游戏:&emsp;ESC</li>
-				</ul>
-			</div>
+	<div id="loading">
+		<span id="message">加载中 ...</span>
+		<div id="progressbar" class="shadow">
+			<div id="bar" class="shadow"></div>
+		</div>
+		<div id="progress_message">
+			<span id="number_message">0</span>
+			<span>/</span>
+			<span id="total_message">0</span>
 		</div>
 
+
 	</div>
+	<div id="warp">
+		<div id="blocker">
+
+			<div id="instructions">
+				<div class="gamemenu">
+					<canvas id="wave"></canvas>
+					<h2>点击开始游戏</h2>
+					<h4>说明:</h4>
+					<ul>
+						<li>移动:&emsp;W,A,S,D</li>
+						<li>跳跃:&emsp;空格</li>
+						<li>射击:&emsp;左键</li>
+						<li>互动:&emsp;E</li>
+						<li>手电筒:&emsp;F</li>
+						<li>暂停游戏:&emsp;ESC</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
 
 
 	<video id="video" loop  muted webkit-playsinline style="display:none">
