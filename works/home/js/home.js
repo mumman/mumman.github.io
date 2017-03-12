@@ -57,15 +57,37 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
     var prevTime = performance.now();
 
     //全局的资源管理器
-       var warp=document.getElementById('warp');
-        var loading=document.getElementById('loading');
+	var warp=document.getElementById('warp');
+	var loading=document.getElementById('loading');
+		THREE.DefaultLoadingManager.onStart = function ( ) {
+        //console.log( 'Loaded 开始' );
+			};
+		THREE.DefaultLoadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
+			//console.log( 'Loaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
+			document.getElementById('number_message').innerHTML=itemsLoaded;
+			document.getElementById('total_message').innerHTML=itemsTotal;
+			document.getElementById('bar').style.width= itemsLoaded/itemsTotal*100+"%";
+			if(itemsLoaded>65){
+				warp.style.visibility='visible';
+				loading.style.display='none';
+				
+			}
+		};
+		THREE.DefaultLoadingManager.onLoad = function ( ) {
+			console.log( 'Loading Complete!');
+			warp.style.visibility='visible';
+			loading.style.display='none';
 
+		};
+		THREE.DefaultLoadingManager.onError = function ( url ) {
+			console.log( 'There was an error loading ' + url );
+			warp.style.visibility='visible';
+			loading.style.display='none';
+		};
 
 
     init();
     animate();
-
-
 
     function onWindowResize() {
         personalControl.camera.aspect = window.innerWidth / window.innerHeight;
@@ -77,16 +99,6 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
     }
 
     function init() {
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 
         // scene
@@ -250,8 +262,6 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
         warp.appendChild(container);
         //document.body.appendChild( container );
 
-
-
         //stats
         stats = new Stats();
         container.appendChild( stats.dom );
@@ -259,32 +269,7 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
         //event
         window.addEventListener( 'resize', onWindowResize, false );
         //personalControl.controls.addEventListener( 'change', render );
-		
-		
-		
-		//全局的资源管理器
-		THREE.DefaultLoadingManager.onStart = function ( ) {
-        //console.log( 'Loaded 开始' );
-			};
-		THREE.DefaultLoadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
-			//console.log( 'Loaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-			document.getElementById('number_message').innerHTML=itemsLoaded;
-			document.getElementById('total_message').innerHTML=itemsTotal;
-			document.getElementById('bar').style.width= itemsLoaded/itemsTotal*100+"%";
-		};
-		THREE.DefaultLoadingManager.onLoad = function ( ) {
-			console.log( 'Loading Complete!');
-			warp.style.visibility='visible';
-			loading.style.display='none';
 
-		};
-		THREE.DefaultLoadingManager.onError = function ( url ) {
-			console.log( 'There was an error loading ' + url );
-			warp.style.visibility='visible';
-			loading.style.display='none';
-		};
-
-	
 		
 		
     }
