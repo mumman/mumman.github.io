@@ -79,10 +79,13 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
 			loading.style.display='none';
 
 		};
-		THREE.DefaultLoadingManager.onError = function ( url ) {
+		THREE.DefaultLoadingManager.onError = function ( url,itemsLoaded ) {
 			console.log( 'There was an error loading ' + url );
-			warp.style.visibility='visible';
-			loading.style.display='none';
+			if(itemsLoaded>64){
+				warp.style.visibility='visible';
+				loading.style.display='none';
+			}
+			
 		};
 
 
