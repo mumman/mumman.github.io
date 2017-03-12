@@ -59,26 +59,6 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
     //全局的资源管理器
        var warp=document.getElementById('warp');
         var loading=document.getElementById('loading');
-    THREE.DefaultLoadingManager.onStart = function ( ) {
-        //console.log( 'Loaded 开始' );
-    };
-    THREE.DefaultLoadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
-        //console.log( 'Loaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-        document.getElementById('number_message').innerHTML=itemsLoaded;
-        document.getElementById('total_message').innerHTML=itemsTotal;
-        document.getElementById('bar').style.width= itemsLoaded/itemsTotal*100+"%";
-    };
-    THREE.DefaultLoadingManager.onLoad = function ( ) {
-        console.log( 'Loading Complete!');
-        warp.style.visibility='visible';
-        loading.style.display='none';
-
-    };
-    THREE.DefaultLoadingManager.onError = function ( url ) {
-        console.log( 'There was an error loading ' + url );
-		warp.style.visibility='visible';
-        loading.style.display='none';
-    };
 
 
 
@@ -97,6 +77,17 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
     }
 
     function init() {
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
         // scene
         scene = new THREE.Scene();
@@ -268,6 +259,34 @@ require(['PersonalControl','WallWindow','CubeAnimation','GunWeapon','PanoramaCub
         //event
         window.addEventListener( 'resize', onWindowResize, false );
         //personalControl.controls.addEventListener( 'change', render );
+		
+		
+		
+		//全局的资源管理器
+		THREE.DefaultLoadingManager.onStart = function ( ) {
+        //console.log( 'Loaded 开始' );
+			};
+		THREE.DefaultLoadingManager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
+			//console.log( 'Loaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
+			document.getElementById('number_message').innerHTML=itemsLoaded;
+			document.getElementById('total_message').innerHTML=itemsTotal;
+			document.getElementById('bar').style.width= itemsLoaded/itemsTotal*100+"%";
+		};
+		THREE.DefaultLoadingManager.onLoad = function ( ) {
+			console.log( 'Loading Complete!');
+			warp.style.visibility='visible';
+			loading.style.display='none';
+
+		};
+		THREE.DefaultLoadingManager.onError = function ( url ) {
+			console.log( 'There was an error loading ' + url );
+			warp.style.visibility='visible';
+			loading.style.display='none';
+		};
+
+	
+		
+		
     }
 
     //animate

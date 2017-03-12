@@ -4,18 +4,16 @@
 //three.js部分的全局对象
 var GOT={
     gameStart:false,
-    manager : function(){
-        var manager = new THREE.LoadingManager();
-        manager.onLoad = function ( ) {
-         console.log( 'Loading complete!zzzzzzzzzzzzzzz');
-         };
-      /*  manager.onProgress = function ( item, loaded, total ) {
-            console.log( item, loaded, total );
-        };*/
-        return manager;
+	/*
+		manager : function(){
+			var manager = new THREE.LoadingManager();
+			manager.onLoad = function ( ) {
+			 console.log( 'Loading complete!zzzzzzzzzzzzzzz');
+			 };
+			return manager;
 
-    }(),
-
+		}(),
+	*/
 
     objPromise: function(mtlPath,objPath,manager){
      var promise= new Promise(function(resolve,reject){
