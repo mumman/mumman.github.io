@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>mythree-webvr-boilerplate</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+
+</head>
+<body>
+	<div id="webgl-container"></div>
+
+	<div id="view">
+		<div>
+			<p>视角切换</p>
+			<p>快捷键</p>
+		</div>
+		<ul></ul>
+		<div>关闭菜单</div>
+	</div>
+	<div id="info">
+		<h2>操作说明</h2>
+		<div class="mouse clearfix">
+			<div class="icoInfo pull-left">
+				<img src="./img/mouse-controls.svg" alt="">
+			</div>
+			<div class="textInfo pull-left">
+				<p>鼠标 = 环视</p>
+				<p>左键 = 交互</p>
+				<p>滚轮 = 缩放</p>
+			</div>
+		</div>
+		<div class="keyboard clearfix">
+			<div class="icoInfo pull-left">
+				<img src="./img/keyboard-controls.svg" alt="">
+			</div>
+			<div class="textInfo pull-left">
+				<p>w,s,a,d = 移动</p>
+				<p>e = 交互</p>
+				<p>f = 手电筒</p>
+				<p>空格 = 跳跃</p>
+			</div>
+		</div>
+		<div class="vr clearfix">
+			<div class="icoInfo pull-left">
+				<img src="./img/vr-controls.svg" alt="">
+			</div>
+			<div class="textInfo pull-left">
+				<p>单击 = 交互</p>
+				<p>凝视 = 瞬移</p>
+			</div>
+		</div>
+		<img class="closeBtn" src="./img/closebtn.png" alt="">
+	</div>
+	<div id="controlMenu">
+		<div class="infoBtn"><img src="./img/infobtn.png" alt=""></div>
+		<div class="fullScreen"><img src="./img/fullscreen.png" alt=""></div>
+		<div class="logo"><a href="#"><img src="./img/logo1.png" alt=""></a></div>
+	</div>
+
+</body>
+<script src="app/libs/three.min.js"></script>
+<script src="app/libs/VRControls.js"></script>
+<script src="app/libs/VREffect.js"></script>
+<script src="app/libs/webvr-polyfill.min.js"></script>
+<script src="app/libs/DaydreamController.js"></script>
+<script src="app/libs/WebVR.js"></script>
+<script src="app/libs/WebVRCamera.js"></script>
+<script src="app/libs/TrackballControls.js"></script>
+<script src="app/libs/DDSLoader.js"></script>
+<script src="app/libs/MTLLoader.js"></script>
+<script src="app/libs/OBJLoader.js"></script>
+<script src="app/libs/PointerLockControls.js"></script>
+<script src="app/libs/threex.rendererstats.js"></script>
+<script src="app/GOT.js"></script>
+<script src="build/bundle.js"></script>
+
+</html>
